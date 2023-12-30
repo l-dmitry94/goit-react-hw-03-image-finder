@@ -1,30 +1,23 @@
 import { Component } from 'react';
 import Searchbar from 'components/Searchbar';
 import ImageGallery from 'components/ImageGallery';
-import api from '../../services/pixabay-api';
 
 class App extends Component {
     state = {
-        images: [],
+        query: '',
     };
 
-    handleSubmit = async query => {
-      console.log(query.search)
-        const data = await api.fetchImages(query.search);
-        console.log(data.hits)
-        
-        this.setState(({
-          images: data.hits
-        }))
-
+    handleSubmit = query => {
+        this.setState({ query: query.search });
     };
+
     render() {
-        const { images } = this.state;
+        const { query } = this.state;
 
         return (
             <section>
                 <Searchbar onSubmit={this.handleSubmit} />
-                <ImageGallery items={images} />
+                <ImageGallery query={query} />
             </section>
         );
     }
