@@ -5,7 +5,7 @@ const ImageGalleryItem = ({ items }) => {
 
     return (
         <ImageItem>
-            <Image src={webformatURL} alt={tags} />
+            <Image src={webformatURL} alt={tags} loading="lazy"/>
         </ImageItem>
     );
 };
