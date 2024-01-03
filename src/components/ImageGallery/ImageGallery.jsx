@@ -73,6 +73,13 @@ class ImageGallery extends Component {
                 this.setState({ isHiddenButton: true });
                 toast.info('There are no more images');
             }
+
+            window.scroll({
+                top: document.body.offsetHeight,
+                left: 0,
+                behavior: 'smooth',
+            });
+
         } catch (error) {
             console.log(error);
         } finally {
@@ -107,7 +114,9 @@ class ImageGallery extends Component {
 
         return (
             <>
-                <ImageGalleryList>{items}</ImageGalleryList>
+                <ImageGalleryList id="imageGalleryList">
+                    {items}
+                </ImageGalleryList>
 
                 {isLoading && (
                     <div style={{ display: 'flex', justifyContent: 'center' }}>
