@@ -2,7 +2,7 @@ import styled from '@emotion/styled';
 
 export const LoadMoreWrapper = styled.div`
     text-align:center;
-    margin-top: 20px;
+    margin: 20px 0;
 `
 
 export const LoadMoreButton = styled.button`

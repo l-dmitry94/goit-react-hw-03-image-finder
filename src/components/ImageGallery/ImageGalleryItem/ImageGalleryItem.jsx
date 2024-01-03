@@ -1,11 +1,11 @@
-import { Image, ImageItem } from "./ImageGalleryItem.styled";
+import { Image, ImageItem } from './ImageGalleryItem.styled';
 
-const ImageGalleryItem = ({ items }) => {
-    const { webformatURL, tags } = items;
+const ImageGalleryItem = ({ items, onToggleModal }) => {
+    const { webformatURL, tags, largeImageURL } = items;
 
     return (
-        <ImageItem>
-            <Image src={webformatURL} alt={tags} loading="lazy"/>
+        <ImageItem onClick={() => onToggleModal(largeImageURL)}>
+            <Image src={webformatURL} alt={tags} loading="lazy" />
         </ImageItem>
     );
 };

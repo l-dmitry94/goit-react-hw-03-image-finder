@@ -30,7 +30,6 @@ const Searchbar = ({ onSubmit }) => {
                         </SearchButton>
 
                         <SearchInput
-                            className="input"
                             type="text"
                             name="search"
                             autoComplete="off"
